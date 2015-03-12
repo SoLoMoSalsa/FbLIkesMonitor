@@ -1,0 +1,159 @@
+/*for responsive table below 800px*/
+/*assets/fonts/ProximaNova-Regular.otf*/
+
+@font-face {
+    font-family: ProximaNova;
+    /*font-weight: bold;*/
+    
+    src: url("../fonts/ProximaNova-Regular.otf") format("opentype");
+}
+@media only screen and (max-width: 800px) {
+    /* Force table to not be like tables anymore */
+    
+    #no-more-tables table, #no-more-tables thead, #no-more-tables tbody, #no-more-tables th, #no-more-tables td, #no-more-tables tr {
+        display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    
+    #no-more-tables thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    #no-more-tables tr {
+        border: 1px solid #ccc;
+    }
+    #no-more-tables td {
+        /* Behave  like a "row" */
+        
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
+    #no-more-tables td:before {
+        /* Now like a table header */
+        
+        position: absolute;
+        /* Top/left values mimic padding */
+        
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+    /*
+    Label the data
+    */
+    
+    #no-more-tables td:before {
+        content: attr(data-title);
+    }
+}
+@media only screen and (min-width: 801px) {
+    /* Force table to not be like tables anymore */
+    
+    .fblikes-table tr {
+        height: 50px;
+    }
+}
+/*General styling starts here*/
+
+body {
+    font-family: ProximaNova, "Helvetica Neue";
+}
+.container {
+    width: 100%;
+}
+.container.content {
+    margin-top: 65px;
+}
+.footer {
+    color: white;
+    padding: 15px;
+    
+    background-color: #303538;
+    margin: 0;
+}
+.footer p{
+   margin: 0; 
+}
+.top-nav-bar {
+    border-width: 0;
+    border-radius: 0;
+    height: 65px;
+}
+.top-nav-bar .navbar-brand a {
+    height: 65px;
+}
+/*Table formating*/
+
+.fblikes-table {
+    text-align: center;
+    background-color: #dce1eb;
+}
+.fblikes-table>thead {
+    background-color: #fdcf09;
+}
+.fblikes-table th {
+    text-align: center;
+    font-size: 17px;
+}
+/*
+.*/
+
+.fblikes-table tr td {
+    border-bottom: 1px solid #828ea6;
+    color: #3f5c9a;
+    font-size: 15px;
+}
+.fblikes-table tr td:before {
+    /*font: normal normal normal 14px/1 FontAwesome;*/
+    font-size: inherit;
+    margin-right: 5px;
+   /* content: "\f087 ";*/ content: "\e125";
+    font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  /*line-height: 1;*/
+    vertical-align: middle;
+
+}
+tr td:first-child {
+    /*text-decoration: underline;*/
+    
+    background-color: #3b5a9a;
+    color: #FFF;
+}
+tr td:first-child:before  {
+    /*text-decoration: underline;*/
+   content: "";
+}
+#navbar.filter-category
+{
+    margin: 15px 0;
+}
+
+.menu-right:after
+{
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    /* line-height: 1; */
+    vertical-align: middle;
+    content: "\e258";
+    vertical-align: middle;
+    /* font-stretch: condensed; */
+    margin-left: 0;
+    font-size: 17px;
+    float: right;
+}
+.pagination-container
+{
+    text-align: center;
+}
