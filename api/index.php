@@ -44,7 +44,8 @@ function get_likes_category($connect, $category){
 		{
 			$likes_category = get_likes_category($connect, $_GET['category']);
 			//print_r($likes_category);
-			echo json_encode(array_slice($likes_category,$page_start,20));
+			//echo json_encode(array_slice($likes_category,$page_start,20));
+			echo json_encode($likes_category);
 		}
 		else
 		{

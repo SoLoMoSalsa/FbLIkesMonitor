@@ -43,7 +43,7 @@
             <div id="navbar" class="filter-category pull-right">
                 <div class="bs-example" data-example-ids="select-form-control" style="  width: 300px;">
                     <form>
-                      <select class="form-control" name="category">
+                      <select class="form-control" name="category" onchange="submit()">
                         <option>--Select Cateory--</option>
                         <option>e-Commerce</option>
                         <option>Entertainment</option>
@@ -106,6 +106,7 @@
         else
             $next = $page +1;
         ?>
+        
         <div class="pagination-container">
         	<ul class="pagination pagination-lg">
         	        <?php 
