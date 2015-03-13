@@ -106,19 +106,18 @@
         else
             $next = $page +1;
         ?>
-        
         <div class="pagination-container">
         	<ul class="pagination pagination-lg">
         	        <?php 
                         echo '<li><a href="?page='.$prev.'" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
                     ?>
-        	        <li <?php if($page == 1){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=1">1</a></li>
-        	        <li <?php if($page == 2){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=2">2</a></li>
-        	        <li <?php if($page == 3){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=3">3</a></li>
-        	        <li <?php if($page == 4){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=4">4</a></li>
-        	        <li <?php if($page == 5){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=5">5</a></li>
-                    <li <?php if($page == 6){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=6">6</a></li>
-                    <li <?php if($page == 7){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=7">7</a></li>
+        	        <li <?php if($page == 1){echo 'class="active"';} ?> ><a href="?page=1">1</a></li>
+   2){echo 'class="active"';} ?> ><a href="?page=2">2</a></li>
+        	        <li <?php if($page == 3){echo 'class="active"';} ?> ><a href="?page=3">3</a></li>
+        	        <li <?php if($page == 4){echo 'class="active"';} ?> ><a href="?page=4">4</a></li>
+        	        <li <?php if($page == 5){echo 'class="active"';} ?> ><a href="?page=5">5</a></li>
+                    <li <?php if($page == 6){echo 'class="active"';} ?> ><a href="?page=6">6</a></li>
+                    <li <?php if($page == 7){echo 'class="active"';} ?> ><a href="?page=7">7</a></li>
         	        <?php 
                         echo '<li><a href="?page='.$next.'" aria-label="Next"><span aria-hidden="true">»</span></a></li>';
                     ?>
