@@ -157,3 +157,23 @@ tr td:first-child:before  {
 {
     text-align: center;
 }
+
+.likes-up:after
+{
+    font-family: 'Glyphicons Halflings';
+    vertical-align: top;
+    content: "\e129 22%";
+    color: green;
+    margin-left: 5px;
+    font-size: inherit;
+}
+.likes-down:after
+{
+    font-family: 'Glyphicons Halflings';
+    vertical-align: top;
+    content: "\e130 22%";
+    color: red;
+    margin-left: 5px;
+    font-size: inherit;
+}
+
