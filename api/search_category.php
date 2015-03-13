@@ -1,6 +1,6 @@
 <?php
 header ("Content-type: application/json");
-$connect = new mysqli("localhost", "root", "root", "fb_likes");
+$connect = new mysqli("localhost", "root", "root", "fblikesmonitor");
 $page_length = 20;
 function get_likes_category($connect, $category){
 	$all_likes = $connect->query("SELECT * FROM `likes` WHERE `m_category` LIKE '%".$category."%' ORDER BY `likes`.`username` ASC  ");

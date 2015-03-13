@@ -43,12 +43,21 @@
             <div id="navbar" class="filter-category pull-right">
                 <div class="bs-example" data-example-ids="select-form-control" style="  width: 300px;">
                     <form>
-                      <select class="form-control">
+                      <select class="form-control" name="category">
                         <option>--Select Cateory--</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option>e-Commerce</option>
+                        <option>Entertainment</option>
+                        <option>Fashion/Lifestyle Brands</option>
+                        <option>FMCG</option>
+                        <option>Food/Drink</option>
+                        <option>Liquor</option>
+                        <option>Media/Publishing/Internet</option>
+                        <option>Mobile Phones</option>
+                        <option>Mobiles Phones</option>
+                        <option>TV Channels</option>
+                        <option>TV Show</option>
+
+
                       </select>
                     </form>
                   </div>
@@ -80,17 +89,38 @@
                 </table>
             </div>
         </div>
+        <?php
+        if(isset($_GET['page']))
+        {
+            $page = $_GET['page'];    
+        }
+        else
+            $page = 1;
+        
+        if($page == 1)
+            $prev = 1;
+        else
+            $prev = $page -1;
+        if($page == 7)
+            $next = 7;
+        else
+            $next = $page +1;
+        ?>
         <div class="pagination-container">
         	<ul class="pagination pagination-lg">
-        	        <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-        	        <li class="active"><a href="?page=1">1</a></li>
-        	        <li><a href="?page=2">2</a></li>
-        	        <li><a href="?page=3">3</a></li>
-        	        <li><a href="?page=4">4</a></li>
-        	        <li><a href="?page=5">5</a></li>
-                    <li><a href="?page=6">6</a></li>
-                    <li><a href="?page=7">7</a></li>
-        	        <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li> 
+        	        <?php 
+                        echo '<li><a href="?page='.$prev.'" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
+                    ?>
+        	        <li <?php if($page == 1){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=1">1</a></li>
+        	        <li <?php if($page == 2){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=2">2</a></li>
+        	        <li <?php if($page == 3){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=3">3</a></li>
+        	        <li <?php if($page == 4){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=4">4</a></li>
+        	        <li <?php if($page == 5){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=5">5</a></li>
+                    <li <?php if($page == 6){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=6">6</a></li>
+                    <li <?php if($page == 7){echo 'class="active"';} ?> ><a href="<?php echo $base; ?>?page=7">7</a></li>
+        	        <?php 
+                        echo '<li><a href="?page='.$next.'" aria-label="Next"><span aria-hidden="true">»</span></a></li>';
+                    ?>
         	      </ul>
         </div>
         

@@ -1,6 +1,6 @@
 <?php
 header ("Content-type: application/json");
-$connect = new mysqli("localhost", "root", "root", "fb_likes");
+$connect = new mysqli("localhost", "root", "root", "fblikesmonitor");
 print "<pre>";
 function get_m_category($connect){
 	$get_m_category = $connect->query("SELECT DISTINCT `m_category` FROM `likes` ORDER BY `likes`.`m_category` ASC ");
