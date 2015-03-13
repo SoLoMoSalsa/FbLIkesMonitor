@@ -10,13 +10,13 @@ else
 	$page_start = 0;
 
 function get_likes($connect){
-	$all_likes = $connect->query("SELECT * FROM `likes` ORDER BY `username` ");
+	$all_likes = $connect->query("SELECT * FROM `likes` ORDER BY `name` ");
 	$i=0;
 	while ($row_likes = $all_likes->fetch_assoc()) {
 			foreach ($row_likes as $key => $value) {
 				$likes[$i][$key] = $value;
 			}
-			$like_data[$likes[$i]['username']][$likes[$i]['date']] = $likes[$i]['likes'];
+			$like_data[$likes[$i]['name']][$likes[$i]['date']] = $likes[$i]['likes'];
 			$i++;
 		}
 
@@ -28,14 +28,14 @@ function get_likes($connect){
 //print_r($likes_all);
 
 function get_likes_category($connect, $category){
-	$all_likes = $connect->query("SELECT * FROM `likes` WHERE `m_category` LIKE '%".urldecode($category)."%' ORDER BY `likes`.`username` ASC  ");
-	
+	$all_likes = $connect->query("SELECT * FROM `likes` WHERE `m_category` LIKE '%".urldecode($category)."%' ORDER BY `likes`.`name` ASC  ");
+
 	$i=0;
 	while ($row_likes = $all_likes->fetch_assoc()) {
 			foreach ($row_likes as $key => $value) {
 				$likes[$i][$key] = $value;
 			}
-			$like_data[$likes[$i]['username']][$likes[$i]['date']] = $likes[$i]['likes'];
+			$like_data[$likes[$i]['name']][$likes[$i]['date']] = $likes[$i]['likes'];
 			$i++;
 		}
 		return $like_data;

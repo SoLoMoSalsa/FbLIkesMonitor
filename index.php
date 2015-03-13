@@ -66,6 +66,9 @@
 
 
     <div class="container content">
+    <div id="loader" style="width:800px; margin:0 auto;">
+       <!-- <img src="indicator.gif"/> -->
+     </div>
         <div class="row">
             
             <div id="no-more-tables">

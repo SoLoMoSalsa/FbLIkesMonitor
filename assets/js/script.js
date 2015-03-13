@@ -17,7 +17,8 @@ loadTemplates(queries);
  };
 }
 function loadTemplates(params) {
-    $('#loader').html("<img src='" + window.base + "sites/all/themes/sealedair/assets/i/ajax-loader.gif' />").show();
+    $('#loader').html("<img src='assets/ajax-loader2.gif' />").show();
+    $('#no-more-tables , .pagination-container').hide();
     console.log("working");
     $.ajax({
         type: "GET",
@@ -46,14 +47,15 @@ function loadTemplates(params) {
                 for(d in date)
                 {
                     table += '<td data-title="'+date[d]+'">'+reply[val][date[d]]+'</td>';
-                    console.log('date => '+date[d]+'likes => '+reply[val][date[d]]);
+                    //console.log('date => '+date[d]+'likes => '+reply[val][date[d]]);
                 }
                 var percent = percentChange(reply[val][date[0]],reply[val][date[date.length-1]]);
                 table += '<td data-title="" class="'+percent.class+'">'+percent.change.toPrecision(3)+' %</td>';
 
                 table +='</tr>';
             }
-            $('.fblikes-table tbody').html(table);    
+            $('.fblikes-table tbody').html(table);
+                $('#no-more-tables , .pagination-container').show();    
    }).fail(function(reply) {
         console.log("fail");
     });
