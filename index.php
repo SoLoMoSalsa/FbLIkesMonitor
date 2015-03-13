@@ -112,7 +112,7 @@
                         echo '<li><a href="?page='.$prev.'" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
                     ?>
         	        <li <?php if($page == 1){echo 'class="active"';} ?> ><a href="?page=1">1</a></li>
-   2){echo 'class="active"';} ?> ><a href="?page=2">2</a></li>
+        	        <li <?php if($page == 2){echo 'class="active"';} ?> ><a href="?page=2">2</a></li>
         	        <li <?php if($page == 3){echo 'class="active"';} ?> ><a href="?page=3">3</a></li>
         	        <li <?php if($page == 4){echo 'class="active"';} ?> ><a href="?page=4">4</a></li>
         	        <li <?php if($page == 5){echo 'class="active"';} ?> ><a href="?page=5">5</a></li>
