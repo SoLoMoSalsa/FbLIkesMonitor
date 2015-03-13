@@ -7,6 +7,8 @@
     
     src: url("../fonts/ProximaNova-Regular.otf") format("opentype");
 }
+
+
 @media only screen and (max-width: 800px) {
     /* Force table to not be like tables anymore */
     
@@ -83,6 +85,10 @@ body {
 .footer p{
    margin: 0; 
 }
+.navbar-header
+{
+    width: 100%;
+}
 .top-nav-bar {
     border-width: 0;
     border-radius: 0;
@@ -112,7 +118,7 @@ body {
     color: #3f5c9a;
     font-size: 15px;
 }
-.fblikes-table tr td:before {
+.fblikes-table tr td:not(:last-child):not(:first-child):before {
     /*font: normal normal normal 14px/1 FontAwesome;*/
     font-size: inherit;
     margin-right: 5px;
@@ -136,7 +142,7 @@ tr td:first-child:before  {
 }
 #navbar.filter-category
 {
-    margin: 15px 0;
+    margin: 15px;
 }
 
 .menu-right:after
@@ -158,22 +164,34 @@ tr td:first-child:before  {
     text-align: center;
 }
 
-.likes-up:after
+.likes-up
 {
-    font-family: 'Glyphicons Halflings';
-    vertical-align: top;
-    content: "\e129 22%";
-    color: green;
-    margin-left: 5px;
-    font-size: inherit;
+    
+    color: green !important;
+   
 }
-.likes-down:after
+.likes-down
 {
-    font-family: 'Glyphicons Halflings';
-    vertical-align: top;
-    content: "\e130 22%";
-    color: red;
-    margin-left: 5px;
-    font-size: inherit;
+    
+    color: red !important;
+   
 }
 
+.likes-up:before
+{
+    font-family: 'Glyphicons Halflings';
+    vertical-align: top;
+    content: "\e129";
+    
+    margin-left: 5px;
+    font-size: inherit;
+}
+.likes-down:before
+{
+    font-family: 'Glyphicons Halflings';
+    vertical-align: top;
+    content: "\e130";
+    
+    margin-left: 5px;
+    font-size: inherit;
+}

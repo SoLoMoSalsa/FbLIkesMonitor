@@ -31,36 +31,33 @@
     <nav class="navbar navbar-fixed-top navbar-inverse top-nav-bar">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+                
                 <a class="navbar-brand" href="#"><img src="http://www.solomosalsa.com/assets/img/SOLOMO_LOGO.svg">
                 </a>
-            </div>
             <div id="navbar" class="filter-category pull-right">
-                <div class="bs-example" data-example-ids="select-form-control" style="  width: 300px;">
+                <div class="bs-example" data-example-ids="select-form-control">
                     <form>
                       <select class="form-control" name="category" onchange="submit()">
                         <option >--Select Cateory--</option>
-                        <option <?php if($_GET['category']== 'e-Commerce'){echo 'selected';} ?> >e-Commerce</option>
-                        <option <?php if($_GET['category']== 'Entertainment'){echo 'selected';} ?> >Entertainment</option>
-                        <option <?php if($_GET['category']== 'Fashion/Lifestyle Brands'){echo 'selected';} ?> >Fashion/Lifestyle Brands</option>
-                        <option <?php if($_GET['category']== 'FMCG'){echo 'selected';} ?> >FMCG</option>
-                        <option <?php if($_GET['category']== 'Food/Drink'){echo 'selected';} ?> >Food/Drink</option>
-                        <option <?php if($_GET['category']== 'Liquor'){echo 'selected';} ?> >Liquor</option>
-                        <option <?php if($_GET['category']== 'Media/Publishing/Internet'){echo 'selected';} ?> >Media/Publishing/Internet</option>
-                        <option <?php if($_GET['category']== 'Mobile Phones'){echo 'selected';} ?> >Mobile Phones</option>
-                        <option <?php if($_GET['category']== 'TV Channels'){echo 'selected';} ?> >TV Channels</option>
-                        <option <?php if($_GET['category']== 'TV Show'){echo 'selected';} ?> >TV Show</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category'] == 'e-Commerce'){echo 'selected';} ?> >e-Commerce</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Entertainment'){echo 'selected';} ?> >Entertainment</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Fashion/Lifestyle Brands'){echo 'selected';} ?> >Fashion/Lifestyle Brands</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'FMCG'){echo 'selected';} ?> >FMCG</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Food/Drink'){echo 'selected';} ?> >Food/Drink</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Liquor'){echo 'selected';} ?> >Liquor</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Media/Publishing/Internet'){echo 'selected';} ?> >Media/Publishing/Internet</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Mobile Phones'){echo 'selected';} ?> >Mobile Phones</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'TV Channels'){echo 'selected';} ?> >TV Channels</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'TV Show'){echo 'selected';} ?> >TV Show</option>
 
 
                       </select>
                     </form>
                   </div>
             </div>
+
+            </div>
+            
             <!-- /.nav-collapse -->
         </div>
         <!-- /.container -->
@@ -72,13 +69,14 @@
         <div class="row">
             
             <div id="no-more-tables">
-                <table class="col-md-12 table-condensed cf fblikes-table">
+                <table class="col-md-12 col-bg-12 col-sm-12 table-condensed cf fblikes-table">
                     <thead class="cf">
                         <tr>
                             <th class="menu-right">Date </th>
                             <th class="numeric">11 Mar '15</th>
                             <th class="numeric">12 Mar '15</th>
                             <th class="numeric">13 Mar '15</th>
+                            <th class="numeric">%age Change </th>
                         </tr>
                     </thead>
                     <tbody>

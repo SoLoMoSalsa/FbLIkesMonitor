@@ -8,7 +8,14 @@ $.each(document.location.search.substr(1).split('&'), function(c, q) {
 });
 
 loadTemplates(queries);
-
+/* function percentChange(x,y) {
+  return ((y-x)/x)*100;
+}*/
+ function percentChange(x,y) {
+ return {"change":(((y-x)/x)*100),
+ "class":(y>x)?"likes-up":"likes-down"
+ };
+}
 function loadTemplates(params) {
     $('#loader').html("<img src='" + window.base + "sites/all/themes/sealedair/assets/i/ajax-loader.gif' />").show();
     console.log("working");
@@ -36,20 +43,18 @@ function loadTemplates(params) {
 
                 }
                 console.log('date => 1',date);
-                
                 for(d in date)
                 {
                     table += '<td data-title="'+date[d]+'">'+reply[val][date[d]]+'</td>';
                     console.log('date => '+date[d]+'likes => '+reply[val][date[d]]);
                 }
+                var percent = percentChange(reply[val][date[0]],reply[val][date[date.length-1]]);
+                table += '<td data-title="" class="'+percent.class+'">'+percent.change.toPrecision(3)+' %</td>';
+
                 table +='</tr>';
             }
-            $('.fblikes-table tbody').html(table)
-    
-
-        //var template = '<tr><td data-title="Page Name">{{username}}</td><td data-title="11Mar">50000</td><td data-title="12Mar" class="numeric">51000</td><td data-title="13Mar" class="numeric">52000</td><td data-title="14Mar" class="numeric">53000</td><td data-title="15Mar" class="numeric">153000</td><td data-title="16Mar" class="numeric">123456</td><td data-title="17Mar" class="numeric">736366</td><td data-title="18Mar" class="numeric">626243</td></tr>';
-
-    }).fail(function(reply) {
+            $('.fblikes-table tbody').html(table);    
+   }).fail(function(reply) {
         console.log("fail");
     });
 }
