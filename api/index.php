@@ -28,7 +28,8 @@ function get_likes($connect){
 //print_r($likes_all);
 
 function get_likes_category($connect, $category){
-	$all_likes = $connect->query("SELECT * FROM `likes` WHERE `m_category` LIKE '%".$category."%' ORDER BY `likes`.`username` ASC  ");
+	$all_likes = $connect->query("SELECT * FROM `likes` WHERE `m_category` LIKE '%".urldecode($category)."%' ORDER BY `likes`.`username` ASC  ");
+	
 	$i=0;
 	while ($row_likes = $all_likes->fetch_assoc()) {
 			foreach ($row_likes as $key => $value) {

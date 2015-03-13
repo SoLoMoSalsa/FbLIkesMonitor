@@ -44,18 +44,17 @@
                 <div class="bs-example" data-example-ids="select-form-control" style="  width: 300px;">
                     <form>
                       <select class="form-control" name="category" onchange="submit()">
-                        <option>--Select Cateory--</option>
-                        <option>e-Commerce</option>
-                        <option>Entertainment</option>
-                        <option>Fashion/Lifestyle Brands</option>
-                        <option>FMCG</option>
-                        <option>Food/Drink</option>
-                        <option>Liquor</option>
-                        <option>Media/Publishing/Internet</option>
-                        <option>Mobile Phones</option>
-                        <option>Mobiles Phones</option>
-                        <option>TV Channels</option>
-                        <option>TV Show</option>
+                        <option >--Select Cateory--</option>
+                        <option <?php if($_GET['category']== 'e-Commerce'){echo 'selected';} ?> >e-Commerce</option>
+                        <option <?php if($_GET['category']== 'Entertainment'){echo 'selected';} ?> >Entertainment</option>
+                        <option <?php if($_GET['category']== 'Fashion/Lifestyle Brands'){echo 'selected';} ?> >Fashion/Lifestyle Brands</option>
+                        <option <?php if($_GET['category']== 'FMCG'){echo 'selected';} ?> >FMCG</option>
+                        <option <?php if($_GET['category']== 'Food/Drink'){echo 'selected';} ?> >Food/Drink</option>
+                        <option <?php if($_GET['category']== 'Liquor'){echo 'selected';} ?> >Liquor</option>
+                        <option <?php if($_GET['category']== 'Media/Publishing/Internet'){echo 'selected';} ?> >Media/Publishing/Internet</option>
+                        <option <?php if($_GET['category']== 'Mobile Phones'){echo 'selected';} ?> >Mobile Phones</option>
+                        <option <?php if($_GET['category']== 'TV Channels'){echo 'selected';} ?> >TV Channels</option>
+                        <option <?php if($_GET['category']== 'TV Show'){echo 'selected';} ?> >TV Show</option>
 
 
                       </select>
@@ -105,6 +104,8 @@
             $next = 7;
         else
             $next = $page +1;
+        if(!isset($_GET['category']))
+        {
         ?>
         <div class="pagination-container">
         	<ul class="pagination pagination-lg">
@@ -123,7 +124,9 @@
                     ?>
         	      </ul>
         </div>
-        
+        <?php
+}
+        ?>
 
     </div>
 <div class="footer">
