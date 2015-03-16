@@ -97,7 +97,11 @@ function loadCategory(params) {
         console.log(loadCategory);
         //$('#loader').html("").hide();
         var data_category='';
-        data_category='<option >--Select Cateory--</option>';
+        console.log('queries.category => '+queries.category);
+        if(queries.category == 'All' || queries.category == undefined)
+            data_category+='<option selected>All</option>';
+        else
+            data_category+='<option>All</option>';
         for(cat in category)
         {
             if(decodeURIComponent(queries.category).replace("+", " ") == category[cat])

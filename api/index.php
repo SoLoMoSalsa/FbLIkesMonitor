@@ -46,7 +46,7 @@ function get_likes_category($connect, $category, $where){
 		return $like_data;
 }
 
-		if(isset($_GET['category']))
+		if(isset($_GET['category']) && isset($_GET['category']) != 'All')
 		{
 			$likes_category = get_likes_category($connect, $_GET['category'],$where);
 			//print_r($likes_category);
