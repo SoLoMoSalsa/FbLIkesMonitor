@@ -8,6 +8,7 @@ $.each(document.location.search.substr(1).split('&'), function(c, q) {
 });
 
 loadTemplates(queries);
+loadCategory(queries);
 /* function percentChange(x,y) {
   return ((y-x)/x)*100;
 }*/
@@ -79,6 +80,34 @@ function loadTemplates(params) {
             //console.log('table => '+table);
             $('.fblikes-table').html(table);
                 $('#no-more-tables , .pagination-container').show();    
+   }).fail(function(reply) {
+        console.log("fail");
+    });
+}
+function loadCategory(params) {
+    // $('#loader').html("<img src='assets/ajax-loader2.gif' />").show();
+    // $('#no-more-tables , .pagination-container').hide();
+    console.log("loadCategory");
+    $.ajax({
+        type: "GET",
+        data: params,
+        timeout: 5000,
+        url: 'api/category.php',
+    }).done(function(category) {
+        console.log(loadCategory);
+        //$('#loader').html("").hide();
+        var data_category='';
+        data_category='<option >--Select Cateory--</option>';
+        for(cat in category)
+        {
+            if(decodeURIComponent(queries.category).replace("+", " ") == category[cat])
+                data_category +='<option selected>';
+            else    
+                data_category +='<option>';
+            data_category+=category[cat]+'</option>';
+        }
+        $('#category_form select.category-filter').html(data_category);
+      
    }).fail(function(reply) {
         console.log("fail");
     });

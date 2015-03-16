@@ -36,23 +36,9 @@
                 </a>
             <div id="navbar" class="filter-category pull-right">
                 <div class="bs-example" data-example-ids="select-form-control">
-                    <form>
-                      <select class="form-control" name="category" onchange="submit()">Celebrity
-                        <option >--Select Cateory--</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category'] == 'Celebrity'){echo 'selected';} ?> >Celebrity</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category'] == 'e-Commerce'){echo 'selected';} ?> >e-Commerce</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Entertainment'){echo 'selected';} ?> >Entertainment</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Fashion/Lifestyle Brands'){echo 'selected';} ?> >Fashion/Lifestyle Brands</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'FMCG'){echo 'selected';} ?> >FMCG</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Food/Drink'){echo 'selected';} ?> >Food/Drink</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Liquor'){echo 'selected';} ?> >Liquor</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Media/Publishing/Internet'){echo 'selected';} ?> >Media/Publishing/Internet</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'Mobile Phones'){echo 'selected';} ?> >Mobile Phones</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'TV Channels'){echo 'selected';} ?> >TV Channels</option>
-                        <option <?php if(isset($_GET['category']) && $_GET['category']== 'TV Show'){echo 'selected';} ?> >TV Show</option>
-
-
-                      </select>
+                    <form id="category_form">
+                      <select class="form-control category-filter" name="category" onchange="submit()">Celebrity
+                     </select>
                     </form>
                   </div>
             </div>
