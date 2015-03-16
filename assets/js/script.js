@@ -61,7 +61,7 @@ function loadTemplates(params) {
                     if( d!=0 )
                     {
                         var percent = percentChange(reply[val][date[d-1]],reply[val][date[d]]);
-                        table += '<td data-title="'+date[d]+'">'+reply[val][date[d]]+'<span class="'+percent.class+'">'+ Math.abs(percent.change.toFixed(3))+' </td>';
+                        table += '<td data-title="'+date[d]+'">'+reply[val][date[d]]+'<span class="'+percent.class+'">'+ Math.abs(percent.change.toFixed(3))+'% </td>';
                     }
                     else
                         table += '<td data-title="'+date[d]+'">'+reply[val][date[d]]+'</td>';
