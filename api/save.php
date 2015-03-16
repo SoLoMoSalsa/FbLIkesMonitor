@@ -5,6 +5,7 @@ $url='';
 $today = getdate();
 $curr_date=$today['year']."-".$today['mon']."-".$today['mday'];
 $curr_file_name = $today['year']."".$today['mon']."".$today['mday']."_".date("h:i:sa");
+echo "data";
 if ($_FILES["csv"]["size"] > 0) { 
 
     //get the csv file 
@@ -12,7 +13,7 @@ if ($_FILES["csv"]["size"] > 0) {
     echo "file => ".$file;
     $handle = fopen($file,"r"); 
     //loop through the csv file and insert into database 
-    print "<pre>";
+    // print "<pre>";
     while ($data = fgetcsv($handle, 10000, ','))
      { 
      	$url_partiton = explode("/",$data[2]);
@@ -21,22 +22,34 @@ if ($_FILES["csv"]["size"] > 0) {
      	$fetch_data = file_get_contents($url);
      	$arr = json_decode($fetch_data,true);
      	$filename = $username."_".$curr_file_name;
-     	$str = "INSERT INTO likes (`username`, `category`, `name`,`talking_about_count`, `website`, `likes`, `m_category`, `date`) VALUES 
-     	                         ( 
-     	                             '".$username."', 
-     	                             '".$arr['category']."',
+        echo 'check => '."select * from likes where `username` = '".$username."' and date='2015-03-16' <br>";
+        $check = $connect->query("select * from likes where `username` = '".$username."' and date='2015-03-16'");
+        while ($row_check = $check->fetch_assoc()) {
+                if(isset($row_check))
+                {
+                    echo "already Exist ".$username.", <br>";
+                }
+                else
+                {
+                   $str = "INSERT INTO likes (`username`, `category`, `name`,`talking_about_count`, `website`, `likes`, `m_category`, `date`) VALUES 
+                                 ( 
+                                     '".$username."', 
+                                     '".$connect->real_escape_string($arr['category'])."',
                                      '".$connect->real_escape_string($arr['name'])."',
-     	                             '".$arr['talking_about_count']."', 
-     	                             '".$arr['website']."', 
-     	                             '".$arr['likes']."',
-     	                             '".$data[1]."',
-     	                             '".$curr_date."'
-     	                             
-     	                         ) 
-     	                     ";
-     	                     echo 'str => '.$str;
-     	                $connect->query($str);
-     	file_put_contents(dirname(__FILE__)."/uploaded_JSON/".$filename, json_encode($arr));
+                                     '".$arr['talking_about_count']."', 
+                                     '".$connect->real_escape_string($arr['website'])."', 
+                                     '".$arr['likes']."',
+                                     '".$data[1]."',
+                                     '".$curr_date."'
+                                     
+                                 ) 
+                             ";
+                    echo "str => ".$str." <br>";
+                }
+            }
+     	                    // echo 'str => '.$str;
+     	              //  $connect->query($str);
+     	//file_put_contents(dirname(__FILE__)."/uploaded_JSON/".$filename, json_encode($arr));
      } 
 }               
 ?>
