@@ -37,8 +37,9 @@
             <div id="navbar" class="filter-category pull-right">
                 <div class="bs-example" data-example-ids="select-form-control">
                     <form>
-                      <select class="form-control" name="category" onchange="submit()">
+                      <select class="form-control" name="category" onchange="submit()">Celebrity
                         <option >--Select Cateory--</option>
+                        <option <?php if(isset($_GET['category']) && $_GET['category'] == 'Celebrity'){echo 'selected';} ?> >Celebrity</option>
                         <option <?php if(isset($_GET['category']) && $_GET['category'] == 'e-Commerce'){echo 'selected';} ?> >e-Commerce</option>
                         <option <?php if(isset($_GET['category']) && $_GET['category']== 'Entertainment'){echo 'selected';} ?> >Entertainment</option>
                         <option <?php if(isset($_GET['category']) && $_GET['category']== 'Fashion/Lifestyle Brands'){echo 'selected';} ?> >Fashion/Lifestyle Brands</option>
@@ -79,6 +80,9 @@
                             <th class="numeric">11 Mar '15</th>
                             <th class="numeric">12 Mar '15</th>
                             <th class="numeric">13 Mar '15</th>
+                            <th class="numeric">14 Mar '15</th>
+                            <th class="numeric">15 Mar '15</th>
+                            <th class="numeric">16 Mar '15</th>
                             <th class="numeric">%age Change </th>
                         </tr>
                     </thead>
@@ -89,46 +93,6 @@
                 </table>
             </div>
         </div>
-        <?php
-        if(isset($_GET['page']))
-        {
-            $page = $_GET['page'];    
-        }
-        else
-            $page = 1;
-        
-        if($page == 1)
-            $prev = 1;
-        else
-            $prev = $page -1;
-        if($page == 7)
-            $next = 7;
-        else
-            $next = $page +1;
-        if(!isset($_GET['category']))
-        {
-        ?>
-        <div class="pagination-container">
-        	<ul class="pagination pagination-lg">
-        	        <?php 
-                        echo '<li><a href="?page='.$prev.'" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
-                    ?>
-        	        <li <?php if($page == 1){echo 'class="active"';} ?> ><a href="?page=1">1</a></li>
-        	        <li <?php if($page == 2){echo 'class="active"';} ?> ><a href="?page=2">2</a></li>
-        	        <li <?php if($page == 3){echo 'class="active"';} ?> ><a href="?page=3">3</a></li>
-        	        <li <?php if($page == 4){echo 'class="active"';} ?> ><a href="?page=4">4</a></li>
-        	        <li <?php if($page == 5){echo 'class="active"';} ?> ><a href="?page=5">5</a></li>
-                    <li <?php if($page == 6){echo 'class="active"';} ?> ><a href="?page=6">6</a></li>
-                    <li <?php if($page == 7){echo 'class="active"';} ?> ><a href="?page=7">7</a></li>
-        	        <?php 
-                        echo '<li><a href="?page='.$next.'" aria-label="Next"><span aria-hidden="true">»</span></a></li>';
-                    ?>
-        	      </ul>
-        </div>
-        <?php
-}
-        ?>
-
     </div>
 <div class="footer">
             <p class="text-center">© 2014-2015 Solomo Media Pvt. Ltd. All rights reserved.</p>

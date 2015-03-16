@@ -51,7 +51,7 @@ function get_likes_category($connect, $category){
 		else
 		{
 			$likes_all = get_likes($connect);
-			echo json_encode(array_slice($likes_all,$page_start,20));
+			echo json_encode($likes_all);
 		}
 
 ?>

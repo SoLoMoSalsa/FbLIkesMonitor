@@ -1,5 +1,5 @@
 <?php
-$connect = new mysqli("localhost", "root", "root", "fb_likes");
+$connect = new mysqli("localhost", "root", "root", "fblikesmonitor");
 $url='';
 $today = getdate();
 $curr_date=$today['year']."-".$today['mon']."-".$today['mday'];
@@ -20,10 +20,11 @@ if ($_FILES["csv"]["size"] > 0) {
      	$fetch_data = file_get_contents($url);
      	$arr = json_decode($fetch_data,true);
      	$filename = $username."_".$curr_file_name;
-     	$str = "INSERT INTO likes (`username`, `category`, `talking_about_count`, `website`, `likes`, `m_category`, `date`) VALUES 
+     	$str = "INSERT INTO likes (`username`, `category`, `name`,`talking_about_count`, `website`, `likes`, `m_category`, `date`) VALUES 
      	                         ( 
      	                             '".$username."', 
-     	                             '".$arr['category']."', 
+     	                             '".$arr['category']."',
+                                     '".$connect->real_escape_string($arr['name'])."',
      	                             '".$arr['talking_about_count']."', 
      	                             '".$arr['website']."', 
      	                             '".$arr['likes']."',
