@@ -17,26 +17,19 @@
             z-index: 99;
         }
         .navbar-nav {
-            margin: 0px -15px;
-            font-family: roboto-light;
+            margin: 0;
+            /*font-family: roboto-light;*/
             font-size: 15px;
         }
-        .logo {
-            /*max-height: 30px;*/
-            margin-left: 70px;
-        }
-        .dos .navbar-brand {
-            display: block;
-            float: none!important;
-            padding-top: 10px;
-        }
+        
+        
         .dos .navbar-nav > li > a:hover, .navbar-nav .active {
             color: #fdcf08;
             transition: 0.4s;
         }
         .navbar-nav .active {
-            font-family: roboto-regl;
-            font-size: 15px;
+            /*font-family: roboto-regl;
+*/            font-size: 15px;
         }
         .dos .navbar-nav > .active > a, .dos .navbar-nav > .active > a:hover {
             color: #fdcf08;
@@ -114,29 +107,40 @@
             </button>
             <a href="http://www.solomosalsa.com/" class="navbar-brand">
                 <img class="logo" src="http://www.solomosalsa.com/assets/img/SOLOMO_LOGO.svg" alt="solomo logo">
-            </a>
-            <button type="button" class="contact_button pull-right" data-toggle="modal" data-target="#myModal">Contact</button>
+            </a><h1 class="pull-left title">/ Facebook Likes Monitor</h1>
+            <!-- <button type="button" class="contact_button pull-right" data-toggle="modal" data-target="#myModal">Contact</button> -->
+            <div class="navbar-collapse collapse navbar-responsive-collapse ">
+                <ul class="nav navbar-nav navbar-right selectors">
+                    <li><a href="http://www.solomosalsa.com/about" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-about']);">About</a>
+                    </li>
+                    <li><a href="http://www.solomosalsa.com/services" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-services']);">Services</a>
+                    </li>
+                    <li><a href="http://www.solomosalsa.com/clients" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-clients']);">Clients</a>
+                    </li>
+                    <li><a href="http://www.solomosalsa.com/careers" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-careers']);">Careers</a>
+                    </li>
+                    <li><a href="http://www.solomosalsa.com/blog" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-blog']);">Blog</a>
+                    </li>
+                    <li><a href="http://www.solomosalsa.com/#myModal" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-contact']);">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse navbar-responsive-collapse ">
-            <ul class="nav navbar-nav navbar-right selectors">
-                <li><a href="http://www.solomosalsa.com/about" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-about']);">About</a>
-                </li>
-                <li><a href="http://www.solomosalsa.com/services" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-services']);">Services</a>
-                </li>
-                <li><a href="http://www.solomosalsa.com/clients" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-clients']);">Clients</a>
-                </li>
-                <li><a href="http://www.solomosalsa.com/careers" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-careers']);">Careers</a>
-                </li>
-                <li><a href="http://www.solomosalsa.com/blog" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-blog']);">Blog</a>
-                </li>
-                <li><a class="contact_hide" data-toggle="modal" data-target="#myModal" onclick="_gaq.push(['_trackEvent', 'solomo-website', 'navbar-click', 'tab-contact']);">Contact</a>
-                </li>
-            </ul>
-        </div>
+        <div class="pull-left title-description"><p>We bring you the Facebook Pages Likes monitor in our crusade against fake likes and the ilk!
+Read more about Facebook's announcement about removing non-active users from the likes count on their blog.
+Got any questions or feedback? We are at idea@solomosalsa.com .</p></div>
+        <div id="navbar" class="filter-category pull-right">
+                <div class="bs-example" data-example-ids="select-form-control">
+                    <form id="category_form">
+                      <select class="form-control category-filter" name="category" onchange="submit()">Celebrity
+                     </select>
+                    </form>
+                  </div>
+            </div>
     </div>
 <!-- -->
 
-
+<?php /*
     <nav class="navbar navbar-fixed-top navbar-inverse top-nav-bar">
         <div class="container">
             <div class="navbar-header">
@@ -159,7 +163,7 @@
         <!-- /.container -->
     </nav>
     <!-- /.navbar -->
-
+*/?>
 
     <div class="container content">
     <div id="loader" style="width:800px; margin:0 auto;">
