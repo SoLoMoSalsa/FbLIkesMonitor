@@ -74,7 +74,7 @@
             
             <div id="no-more-tables">
                 <table class="col-md-12 col-bg-12 col-sm-12 table-condensed cf fblikes-table">
-                    <thead class="cf">
+ <!--                    <thead class="cf">
                         <tr>
                             <th class="menu-right">Date </th>
                             <th class="numeric">11 Mar '15</th>
@@ -89,7 +89,7 @@
                     <tbody>
 
 
-                    </tbody>
+                    </tbody> -->
                 </table>
             </div>
         </div>

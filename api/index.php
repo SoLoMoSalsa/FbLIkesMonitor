@@ -1,16 +1,21 @@
 <?php
 header ("Content-type: application/json");
 $connect = new mysqli("localhost", "root", "root", "fblikesmonitor");
-$page_length = 20;
-if(isset($_GET['page']))
-{
-	$page_start = (($_GET['page']-1)*$page_length);
+$where = "";
+$date_array = ['2015-03-11','2015-03-14','2015-03-16'];
+$where .= 'where date in (';
+//	echo 'size => '.count($date_array);
+foreach ($date_array as $key => $value) {
+	if($key == (count($date_array)-1))
+		$where .='"'.$value.'"';
+	else
+	$where .='"'.$value.'",'; 
 }
-else
-	$page_start = 0;
-
-function get_likes($connect){
-	$all_likes = $connect->query("SELECT * FROM `likes` ORDER BY `name` ");
+$where .=')';
+/*echo 'where => '.$where."</br>";
+echo "SELECT * FROM `likes` ".$where." ORDER BY `name` ";
+*/function get_likes($connect, $where){
+	$all_likes = $connect->query("SELECT * FROM `likes` ".$where." ORDER BY `name` ");
 	$i=0;
 	while ($row_likes = $all_likes->fetch_assoc()) {
 			foreach ($row_likes as $key => $value) {
@@ -27,8 +32,8 @@ function get_likes($connect){
 
 //print_r($likes_all);
 
-function get_likes_category($connect, $category){
-	$all_likes = $connect->query("SELECT * FROM `likes` WHERE `m_category` LIKE '%".urldecode($category)."%' ORDER BY `likes`.`name` ASC  ");
+function get_likes_category($connect, $category, $where){
+	$all_likes = $connect->query("SELECT * FROM `likes` ".$where." WHERE `m_category` LIKE '%".urldecode($category)."%' ORDER BY `likes`.`name` ASC  ");
 
 	$i=0;
 	while ($row_likes = $all_likes->fetch_assoc()) {
@@ -43,14 +48,14 @@ function get_likes_category($connect, $category){
 
 		if(isset($_GET['category']))
 		{
-			$likes_category = get_likes_category($connect, $_GET['category']);
+			$likes_category = get_likes_category($connect, $_GET['category'],$where);
 			//print_r($likes_category);
 			//echo json_encode(array_slice($likes_category,$page_start,20));
 			echo json_encode($likes_category);
 		}
 		else
 		{
-			$likes_all = get_likes($connect);
+			$likes_all = get_likes($connect,$where);
 			echo json_encode($likes_all);
 		}
 
