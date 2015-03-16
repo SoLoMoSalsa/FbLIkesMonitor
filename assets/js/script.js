@@ -19,7 +19,7 @@ loadTemplates(queries);
 function loadTemplates(params) {
     $('#loader').html("<img src='assets/ajax-loader2.gif' />").show();
     $('#no-more-tables , .pagination-container').hide();
-    console.log("working");
+    //console.log("working");
     $.ajax({
         type: "GET",
         data: params,
@@ -30,7 +30,7 @@ function loadTemplates(params) {
         $('#loader').html("").hide();
         //window.location=reply;
         var table = '';
-            console.log(reply);
+            //console.log(reply);
             var count = 0;
             for (val in reply){
                  
@@ -43,7 +43,7 @@ function loadTemplates(params) {
                     i++;
 
                 }
-                console.log('date => 1',date);
+              //  console.log('date => 1',date);
                 if(count == 0)
                 {
                     table += '<thead class="cf"><tr><th class="menu-right">Date </th>';

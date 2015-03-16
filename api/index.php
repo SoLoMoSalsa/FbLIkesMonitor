@@ -33,8 +33,7 @@ echo "SELECT * FROM `likes` ".$where." ORDER BY `name` ";
 //print_r($likes_all);
 
 function get_likes_category($connect, $category, $where){
-	$all_likes = $connect->query("SELECT * FROM `likes` ".$where." WHERE `m_category` LIKE '%".urldecode($category)."%' ORDER BY `likes`.`name` ASC  ");
-
+	$all_likes = $connect->query("SELECT * FROM `likes` ".$where." AND `m_category` LIKE '%".urldecode($category)."%' ORDER BY `likes`.`name` ASC  ");
 	$i=0;
 	while ($row_likes = $all_likes->fetch_assoc()) {
 			foreach ($row_likes as $key => $value) {
