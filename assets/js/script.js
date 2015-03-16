@@ -50,7 +50,7 @@ function loadTemplates(params) {
                     //console.log('date => '+date[d]+'likes => '+reply[val][date[d]]);
                 }
                 var percent = percentChange(reply[val][date[0]],reply[val][date[date.length-1]]);
-                table += '<td data-title="" class="'+percent.class+'">'+percent.change.toPrecision(3)+' %</td>';
+                table += '<td data-title="" class="'+percent.class+'">'+ Math.abs(percent.change.toFixed(3))+' %</td>';
 
                 table +='</tr>';
             }
