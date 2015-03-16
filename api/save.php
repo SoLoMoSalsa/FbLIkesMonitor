@@ -1,5 +1,6 @@
 <?php
-$connect = new mysqli("localhost", "root", "root", "fblikesmonitor");
+//$connect = new mysqli("localhost", "root", "root", "fblikesmonitor");
+include("db_config.php");
 $url='';
 $today = getdate();
 $curr_date=$today['year']."-".$today['mon']."-".$today['mday'];

@@ -3,7 +3,7 @@ header ("Content-type: application/json");
 include("db_config.php");
 //$connect = new mysqli("localhost", "root", "root", "fblikesmonitor");
 $where = "";
-$date_array = ['2015-03-11','2015-03-13','2015-03-14','2015-03-16'];
+$date_array = ['2015-03-11','2015-03-14','2015-03-16'];
 $where .= 'where date in (';
 //	echo 'size => '.count($date_array);
 foreach ($date_array as $key => $value) {
