@@ -121,8 +121,36 @@ h1.title
     text-align: center;
     font-size: 17px;
 }
-/*
-.*/
+
+
+.fblikes-table th:after {
+    font-family: 'Glyphicons Halflings';
+    
+    vertical-align: middle;
+    content: "\e119";
+    
+    margin-left: 20px;
+    
+}
+.fblikes-table th.sorting-desc:after {
+    
+    
+    content: "\e113";
+   
+   
+}
+
+.fblikes-table th.sorting-asc:after {
+    
+    
+    
+    content: "\e114";
+    
+    
+}
+
+
+
 
 .fblikes-table tr td {
     border-bottom: 1px solid #828ea6;
@@ -158,17 +186,17 @@ tr td:first-child:before  {
 
 .menu-right:after
 {
-    font-family: 'Glyphicons Halflings';
+    /*font-family: 'Glyphicons Halflings';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400;*/
     /* line-height: 1; */
-    vertical-align: middle;
+    /*vertical-align: middle;
     content: "\e258";
-    vertical-align: middle;
+    vertical-align: middle;*/
     /* font-stretch: condensed; */
-    margin-left: 0;
+    /*margin-left: 0;
     font-size: 17px;
-    float: right;
+    float: right;*/
 }
 .pagination-container
 {
@@ -206,3 +234,4 @@ tr td:first-child:before  {
     margin-left: 5px;
     font-size: inherit;
 }
+
