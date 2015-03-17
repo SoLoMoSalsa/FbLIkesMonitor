@@ -5,7 +5,6 @@ $url='';
 $today = getdate();
 $curr_date=$today['year']."-".$today['mon']."-".$today['mday'];
 $curr_file_name = $today['year']."".$today['mon']."".$today['mday']."_".date("h:i:sa");
-echo "data";
 if ($_FILES["csv"]["size"] > 0) { 
 
     //get the csv file 
@@ -22,16 +21,11 @@ if ($_FILES["csv"]["size"] > 0) {
      	$fetch_data = file_get_contents($url);
      	$arr = json_decode($fetch_data,true);
      	$filename = $username."_".$curr_file_name;
-        echo 'check => '."select * from likes where `username` = '".$username."' and date='2015-03-16' <br>";
         $check = $connect->query("select * from likes where `username` = '".$username."' and date='2015-03-16'");
-        while ($row_check = $check->fetch_assoc()) {
-                if(isset($row_check))
-                {
-                    echo "already Exist ".$username.", <br>";
-                }
-                else
-                {
-                   $str = "INSERT INTO likes (`username`, `category`, `name`,`talking_about_count`, `website`, `likes`, `m_category`, `date`) VALUES 
+            $row_cnt = $check->num_rows;
+            print "row_cnt => ".$row_cnt." username ".$username."<br>";
+            if($row_cnt == 0 ){
+                $str = "INSERT INTO likes (`username`, `category`, `name`,`talking_about_count`, `website`, `likes`, `m_category`, `date`) VALUES 
                                  ( 
                                      '".$username."', 
                                      '".$connect->real_escape_string($arr['category'])."',
@@ -44,12 +38,12 @@ if ($_FILES["csv"]["size"] > 0) {
                                      
                                  ) 
                              ";
-                    echo "str => ".$str." <br>";
-                }
+                             echo 'str => '.$str."<br>";
+                    $connect->query($str);   
+                    file_put_contents(dirname(__FILE__)."/uploaded_JSON/".$filename, json_encode($arr));
             }
-     	                    // echo 'str => '.$str;
-     	              //  $connect->query($str);
-     	//file_put_contents(dirname(__FILE__)."/uploaded_JSON/".$filename, json_encode($arr));
+ 	         
+     	//
      } 
 }               
 ?>

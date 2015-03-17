@@ -47,12 +47,21 @@ function get_likes_category($connect, $category, $where){
 		return $like_data;
 }
 
-		if(isset($_GET['category']) && isset($_GET['category']) != 'All')
+		if(isset($_GET['category']))
 		{
-			$likes_category = get_likes_category($connect, $_GET['category'],$where);
-			//print_r($likes_category);
-			//echo json_encode(array_slice($likes_category,$page_start,20));
-			echo json_encode($likes_category);
+			if($_GET['category'] != 'All')
+			{
+				$likes_category = get_likes_category($connect, $_GET['category'],$where);
+				//print_r($likes_category);
+				//echo json_encode(array_slice($likes_category,$page_start,20));
+				echo json_encode($likes_category);	
+			}
+			else
+			{
+				$likes_all = get_likes($connect,$where);
+				echo json_encode($likes_all);
+			}
+			
 		}
 		else
 		{
