@@ -63,7 +63,7 @@
              date_array['2015-03-14'] = "14 Mar '15";
              date_array['2015-03-16'] = "16 Mar '15";
              if (count == 0) {
-                 table += '<thead class="cf"><tr><th class="menu-right" data-sort="string-ins">Date </th>';
+                 table += '<thead class="cf"><tr><th class="menu-right sorting-asc" data-sort="string-ins">PAGES</th>';
                  for (c in date_array) {
                      table += '<th class="numeric" data-sort="float">' + date_array[c] + '</th>';
                  }

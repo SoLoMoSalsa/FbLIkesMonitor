@@ -39,7 +39,7 @@ Got any questions or feedback? We are at idea@solomosalsa.com">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link href="assets/css/style.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   
     <style type="text/css">
         .dos {
             background: rgba(0, 0, 0, 0.90);
