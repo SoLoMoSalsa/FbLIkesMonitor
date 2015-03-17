@@ -120,6 +120,7 @@ h1.title
 .fblikes-table th {
     text-align: center;
     font-size: 17px;
+     cursor: pointer;
 }
 
 
