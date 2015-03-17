@@ -23,7 +23,7 @@ Got any questions or feedback? We are at idea@solomosalsa.com">
 Read more about Facebook's announcement about removing non-active users from the likes count on their blog[Link=https://www.facebook.com/business/news/page-likes-update].
 Got any questions or feedback? We are at idea@solomosalsa.com">
     <meta property="og:url" content="http://www.solomosalsa.com/facebook-page-likes-monitor/">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="http://www.solomosalsa.com/facebook-page-likes-monitor/assets/img/LikeUnlike_1200x627px_1.png">
     <meta property="og:type" content="website">
 
     <!-- Twitter META -->
@@ -32,7 +32,7 @@ Got any questions or feedback? We are at idea@solomosalsa.com">
 Read more about Facebook's announcement about removing non-active users from the likes count on their blog[Link=https://www.facebook.com/business/news/page-likes-update].
 Got any questions or feedback? We are at idea@solomosalsa.com">
     <meta name="twitter:url" content="http://www.solomosalsa.com/facebook-page-likes-monitor">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:image" content="http://www.solomosalsa.com/facebook-page-likes-monitor/assets/img/LikeUnlike_1200x627px_1.png">
 
     <!-- Fav Icon -->
     <link href="/modules/core/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -255,5 +255,5 @@ Got any questions or feedback? We are at <a href="mailto:idea@solomosalsa.com">i
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/stupidtable.min.js"></script>
-    
+
 </html>

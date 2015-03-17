@@ -21,10 +21,6 @@ if ($_FILES["csv"]["size"] > 0) {
      	$fetch_data = file_get_contents($url);
      	$arr = json_decode($fetch_data,true);
      	$filename = $username."_".$curr_file_name;
-        $check = $connect->query("select * from likes where `username` = '".$username."' and date='2015-03-16'");
-            $row_cnt = $check->num_rows;
-            print "row_cnt => ".$row_cnt." username ".$username."<br>";
-            if($row_cnt == 0 ){
                 $str = "INSERT INTO likes (`username`, `category`, `name`,`talking_about_count`, `website`, `likes`, `m_category`, `date`) VALUES 
                                  ( 
                                      '".$username."', 
@@ -41,7 +37,6 @@ if ($_FILES["csv"]["size"] > 0) {
                              echo 'str => '.$str."<br>";
                     $connect->query($str);   
                     file_put_contents(dirname(__FILE__)."/uploaded_JSON/".$filename, json_encode($arr));
-            }
  	         
      	//
      } 

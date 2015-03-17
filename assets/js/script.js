@@ -58,26 +58,27 @@
 
              }
              //  console.log('date => 1',date);
+             var date_array = new Array();
+             date_array['2015-03-11'] = "11 Mar '15";
+             date_array['2015-03-14'] = "14 Mar '15";
+             date_array['2015-03-16'] = "16 Mar '15";
              if (count == 0) {
                  table += '<thead class="cf"><tr><th class="menu-right" data-sort="string-ins">Date </th>';
-                 for (c in date) {
-                     table += '<th class="numeric" data-sort="float">' + date[c] + '</th>';
+                 for (c in date_array) {
+                     table += '<th class="numeric" data-sort="float">' + date_array[c] + '</th>';
                  }
                  table += '</tr></thead><tbody>';
              }
 
              table += '<tr>';
              table += '<td data-title="Page Name">' + val + '</td>';
-             for (d in date) {
-                 if (d != 0) {
-                     var percent = percentChange(reply[val][date[0]], reply[val][date[d]]);
-                     table += '<td data-title="' + date[d] + '" data-sort-value='+percent.change.toFixed(3)+'>' + reply[val][date[d]] + '<span class="' + percent.class + '">' + Math.abs(percent.change.toFixed(3)) + '% </td>';
+             for (d in date_array) {
+                 if (d != '2015-03-11') {
+                     var percent = percentChange(reply[val][d], reply[val][d]);
+                     table += '<td data-title="' + date_array[d] + '" data-sort-value='+percent.change.toFixed(3)+'>' + reply[val][d] + '<span class="' + percent.class + '">' + Math.abs(percent.change.toFixed(3)) + '% </td>';
                  } else
-                     table += '<td data-title="' + date[d] + '">' + reply[val][date[d]] + '</td>';
-                 //console.log('date => '+date[d]+'likes => '+reply[val][date[d]]);
+                     table += '<td data-title="' + d + '">' + reply[val][d] + '</td>';
              }
-             /*                table += '<td data-title="" class="'+percent.class+'">'+ Math.abs(percent.change.toFixed(3))+' %</td>';*/
-
              table += '</tr>';
              if (count == (reply.length - 1)) {
                  table += '</tbody>';
