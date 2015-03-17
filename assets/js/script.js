@@ -21,9 +21,14 @@
 
 
  function percentChange(x, y) {
+    var change = (((y - x) / x) * 100);
+    if(change >= 0)
+        var clas = "likes-up";
+    else
+        var clas = "likes-down";
      return {
-         "change": (((y - x) / x) * 100),
-         "class": (y > x) ? "likes-up" : "likes-down"
+         "change": change,
+         "class": clas
      };
  }
 
@@ -49,12 +54,20 @@
              "value": "11 Mar '15"
          });
          date_array.push({
+             "date": '2015-03-13',
+             "value": "13 Mar '15"
+         });
+         date_array.push({
              "date": '2015-03-14',
              "value": "14 Mar '15"
          });
          date_array.push({
              "date": '2015-03-16',
              "value": "16 Mar '15"
+         });
+         date_array.push({
+             "date": '2015-03-17',
+             "value": "17 Mar '15"
          });
 
          table += '<thead class="cf"><tr><th class="menu-right sorting-asc" data-sort="string-ins">PAGES</th>';
@@ -68,21 +81,45 @@
 
              table += '<tr>';
              table += '<td data-title="Page Name">' + val + '</td>';
-
+             var count = 0;
              for (d in date_array) {
                  var numberOfLikes = reply[val][date_array[d].date];
 
                  if (numberOfLikes == undefined)
+                 {
                      numberOfLikes = "-N/A-";
+                     table += '<td data-sort-value="0.0" data-title="' + date_array[d].value + '">' + numberOfLikes + '</td>';
+                 }
+                 else
+                 { 
+                    if(d!=0)
+                    {
+                        if(reply[val][date_array[d-1].date] == undefined)
+                        {
+                            table += '<td data-sort-value="0.0" data-title="' + date_array[d].value + '">' + numberOfLikes + '</td>';
+                        }
+                        else
+                        {
+                            if(count == 0)
+                            {
 
-                 if (date_array[d].date != '2015-03-11') {
-
-                     var percent = percentChange(reply[val]['2015-03-11'], numberOfLikes);
-
-
-                     table += '<td data-title="' + date_array[d].date + '" data-sort-value=' + percent.change.toFixed(3) + '>' + numberOfLikes + '<span class="' + percent.class + '">' + Math.abs(percent.change.toFixed(3)) + '% </td>';
-                 } else
-                     table += '<td data-title="' + d.value + '">' + numberOfLikes + '</td>';
+                                var previous = reply[val][date_array[d-1].date];
+/*                                console.log('val => '+val);
+                                console.log('previous => '+previous);*/
+                                count++;
+                            }
+                           
+                            var percent = percentChange(previous, numberOfLikes);
+                            if(val == 'Frooti'){
+                                console.log('percentChange('+previous+', '+numberOfLikes+');',percent);
+                            }
+                            table += '<td data-title="' + date_array[d].value + '" data-sort-value=' + percent.change.toFixed(3) + '>' + numberOfLikes + '<span class="' + percent.class + '">' + Math.abs(percent.change.toFixed(3)) + '% </td>';  
+                        }
+                    }
+                    else
+                        table += '<td data-title="' + date_array[d].value + '"data-sort-value="'+numberOfLikes+'" >' + numberOfLikes + '</td>';
+                 }
+               
              }
              table += '</tr>';
 
