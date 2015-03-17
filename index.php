@@ -3,8 +3,39 @@
 
 <head>
     <meta charset="utf-8">
-    <title>FBLikesMonitor-Solomosalsa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Facebook Page Likes Monitor-Solomosalsa</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Semantic META -->
+    <meta name="keywords" content="">
+    <meta name="description" content="We bring you the Facebook Pages Likes Monitor in our crusade against fake likes and the ilk!
+Read more about Facebook's announcement about removing non-active users from the likes count on their blog[Link=https://www.facebook.com/business/news/page-likes-update].
+Got any questions or feedback? We are at idea@solomosalsa.com">
+
+    <!-- Facebook META -->
+    <meta property="og:site_name" content="Solomo Media: Best Social Media Marketing Company in India">
+    <meta property="og:title" content="Facebook Page Likes Monitor-Solomosalsa">
+    <meta property="og:description" content="We bring you the Facebook Pages Likes Monitor in our crusade against fake likes and the ilk!
+Read more about Facebook's announcement about removing non-active users from the likes count on their blog[Link=https://www.facebook.com/business/news/page-likes-update].
+Got any questions or feedback? We are at idea@solomosalsa.com">
+    <meta property="og:url" content="http://www.solomosalsa.com/facebook-page-likes-monitor/">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter META -->
+    <meta name="twitter:title" content="Facebook Page Likes Monitor-Solomosalsa">
+    <meta name="twitter:description" content="We bring you the Facebook Pages Likes Monitor in our crusade against fake likes and the ilk!
+Read more about Facebook's announcement about removing non-active users from the likes count on their blog[Link=https://www.facebook.com/business/news/page-likes-update].
+Got any questions or feedback? We are at idea@solomosalsa.com">
+    <meta name="twitter:url" content="http://www.solomosalsa.com/facebook-page-likes-monitor">
+    <meta name="twitter:image" content="">
+
+    <!-- Fav Icon -->
+    <link href="/modules/core/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link href="assets/css/style.css" rel="stylesheet" id="bootstrap-css">
@@ -197,9 +228,32 @@ Got any questions or feedback? We are at <a href="mailto:idea@solomosalsa.com">i
             <p class="text-center">© 2014-2015 Solomo Media Pvt. Ltd. All rights reserved.</p>
         </div>
 </body>
-      
+    <script>
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+           ga('create', 'UA-42880987-1', 'solomosalsa.com');
+           ga('send', 'pageview');
+       </script>
+
+    <!-- event tracking code below-->
+    <script type="text/javascript">
+    //GA for event tracking
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42880987-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    </script>  
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/stupidtable.min.js"></script>
+    
 </html>
