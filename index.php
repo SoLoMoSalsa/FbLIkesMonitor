@@ -35,7 +35,7 @@ Got any questions or feedback? We are at idea@solomosalsa.com">
     <meta name="twitter:image" content="http://www.solomosalsa.com/facebook-page-likes-monitor/assets/img/LikeUnlike_1200x627px_1.png">
 
     <!-- Fav Icon -->
-    <link href="/modules/core/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://www.solomosalsa.com/assets/img/fav.png" rel="shortcut icon" type="image/x-icon">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link href="assets/css/style.css" rel="stylesheet" id="bootstrap-css">
