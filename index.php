@@ -107,7 +107,7 @@
             </button>
             <a href="http://www.solomosalsa.com/" class="navbar-brand">
                 <img class="logo" src="http://www.solomosalsa.com/assets/img/SOLOMO_LOGO.svg" alt="solomo logo">
-            </a><h1 class="pull-left title">/ Facebook Likes Monitor</h1>
+            </a><h1 class="pull-left title">Facebook Page Likes Monitor</h1>
             <!-- <button type="button" class="contact_button pull-right" data-toggle="modal" data-target="#myModal">Contact</button> -->
             <div class="navbar-collapse collapse navbar-responsive-collapse ">
                 <ul class="nav navbar-nav navbar-right selectors">
@@ -126,9 +126,9 @@
                 </ul>
             </div>
         </div>
-        <div class="pull-left title-description"><p>We bring you the Facebook Pages Likes monitor in our crusade against fake likes and the ilk!
-Read more about Facebook's announcement about removing non-active users from the likes count on their blog.
-Got any questions or feedback? We are at idea@solomosalsa.com .</p></div>
+        <div class="pull-left title-description"><p>We bring you the Facebook Pages Likes Monitor in our crusade against fake likes and the ilk!
+Read more about Facebook's announcement about removing non-active users from the likes count on their <a target="_blank" href=" https://www.facebook.com/business/news/page-likes-update">blog</a>.
+Got any questions or feedback? We are at <a href="mailto:idea@solomosalsa.com">idea@solomosalsa.com</a></p></div>
         <div id="navbar" class="filter-category pull-right">
                 <div class="bs-example" data-example-ids="select-form-control">
                     <form id="category_form">
