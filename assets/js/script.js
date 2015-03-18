@@ -19,7 +19,6 @@
      }
  });
 
-
  function percentChange(x, y) {
     var change = (((y - x) / x) * 100);
     if(change >= 0)
@@ -54,10 +53,6 @@
              "value": "11 Mar '15"
          });
          date_array.push({
-             "date": '2015-03-13',
-             "value": "13 Mar '15"
-         });
-         date_array.push({
              "date": '2015-03-14',
              "value": "14 Mar '15"
          });
@@ -69,7 +64,10 @@
              "date": '2015-03-17',
              "value": "17 Mar '15"
          });
-
+         date_array.push({
+             "date": '2015-03-18',
+             "value": "18 Mar '15"
+         });
          table += '<thead class="cf"><tr><th class="menu-right sorting-asc" data-sort="string-ins">PAGES</th>';
          for (index in date_array) {
              table += '<th class="numeric" data-sort="float">' + date_array[index].value + '</th>';
