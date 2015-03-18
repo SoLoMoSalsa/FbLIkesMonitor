@@ -19,7 +19,7 @@
      }
  });
 
- function percentChange(x, y) {
+/* function percentChange(x, y) {
     var change = (((y - x) / x) * 100);
     if(change >= 0)
         var clas = "likes-up";
@@ -29,8 +29,15 @@
          "change": change,
          "class": clas
      };
+ }*/
+ function percentChange(x, y) {
+    x=parseInt(x);
+    y=parseInt(y);
+     return {
+         "change": (((y - x) / x) * 100),
+         "class": (y > x) ? "likes-up" : "likes-down"
+     };
  }
-
  function loadTemplates(params) {
      $('#loader').html("<img src='assets/ajax-loader2.gif' />").show();
      $('#no-more-tables , .pagination-container').hide();
@@ -108,9 +115,6 @@
                             }
                            
                             var percent = percentChange(previous, numberOfLikes);
-                            if(val == 'Frooti'){
-                                console.log('percentChange('+previous+', '+numberOfLikes+');',percent);
-                            }
                             table += '<td data-title="' + date_array[d].value + '" data-sort-value=' + percent.change.toFixed(3) + '>' + numberOfLikes + '<span class="' + percent.class + '">' + Math.abs(percent.change.toFixed(3)) + '% </td>';  
                         }
                     }
