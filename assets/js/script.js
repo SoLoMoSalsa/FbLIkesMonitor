@@ -151,11 +151,11 @@
          //$('#loader').html("").hide();
          var data_category = '';
          console.log('queries.category => ' + queries.category);
-         data_category += '<option value=" ">--Select category--</option>';
-         if (queries.category == 'All' || queries.category == undefined)
+         data_category += '<option value="">--Select category--</option>';
+         if (queries.category == 'All')
              data_category += '<option selected>All</option>';
          else
-             data_category += '<option selected>All</option>';
+             data_category += '<option>All</option>';
          for (cat in category) {
              if (decodeURIComponent(queries.category).replace("+", " ") == category[cat])
                  data_category += '<option selected>';
