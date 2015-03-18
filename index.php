@@ -69,6 +69,7 @@
 
 <div class="container content">
 <div class="description-box col-md-12">
+    <h1 class="title">Facebook Page Like Monitor</h1>
     <div class="pull-left title-description"><p>We bring you the Facebook Pages Likes Monitor in our crusade against fake likes and the ilk!
         Read more about Facebook's announcement about removing non-active users from the likes count on their <a target="_blank" href=" https://www.facebook.com/business/news/page-likes-update">blog</a>.
         Got any questions or feedback? We are at <a href="mailto:idea@solomosalsa.com">idea@solomosalsa.com</a></p>
