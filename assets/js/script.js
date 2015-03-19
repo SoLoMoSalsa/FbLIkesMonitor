@@ -30,109 +30,30 @@
          "class": clas
      };
  }*/
+ var jsonReply={};
  function percentChange(x, y) {
     x=parseInt(x);
     y=parseInt(y);
+    var checked = $('#figure').is(':checked');
+    console.log('checked => '+checked); 
+    if(checked == false)
+        var change = (y - x);
+    else
+        var change = (((y - x) / x) * 100);
      return {
-         "change": (((y - x) / x) * 100),
+         "change": change,
          "class": (y > x) ? "likes-up" : "likes-down"
      };
  }
  function loadTemplates(params) {
      $('#loader').html("<img src='assets/ajax-loader2.gif' />").show();
-     $('#no-more-tables , .pagination-container').hide();
      //console.log("working");
      $.ajax({
          type: "GET",
          data: params,
          timeout: 5000,
          url: 'api',
-     }).done(function(reply) {
-         //console.log(reply);
-         $('#loader').html("").hide();
-         //window.location=reply;
-         var table = '';
-         //console.log(reply);
-
-         var date_array = [];
-         date_array.push({
-             "date": '2015-03-11',
-             "value": "11 Mar '15"
-         });
-         date_array.push({
-             "date": '2015-03-14',
-             "value": "14 Mar '15"
-         });
-         date_array.push({
-             "date": '2015-03-16',
-             "value": "16 Mar '15"
-         });
-         date_array.push({
-             "date": '2015-03-17',
-             "value": "17 Mar '15"
-         });
-         date_array.push({
-             "date": '2015-03-18',
-             "value": "18 Mar '15"
-         });
-         table += '<thead class="cf"><tr><th class="menu-right sorting-asc" data-sort="string-ins">PAGES</th>';
-         for (index in date_array) {
-             table += '<th class="numeric" data-sort="float">' + date_array[index].value + '</th>';
-         }
-         table += '</tr></thead><tbody>';
-
-
-         for (val in reply) {
-
-             table += '<tr>';
-             table += '<td data-title="Page Name">' + val + '</td>';
-             var count = 0;
-             for (d in date_array) {
-                 var numberOfLikes = reply[val][date_array[d].date];
-
-                 if (numberOfLikes == undefined)
-                 {
-                     numberOfLikes = "-N/A-";
-                     table += '<td data-sort-value="0.0" data-title="' + date_array[d].value + '">' + numberOfLikes + '</td>';
-                 }
-                 else
-                 { 
-                    if(d!=0)
-                    {
-                        if(reply[val][date_array[d-1].date] == undefined)
-                        {
-                            table += '<td data-sort-value="0.0" data-title="' + date_array[d].value + '">' + numberOfLikes + '</td>';
-                        }
-                        else
-                        {
-                            if(count == 0)
-                            {
-
-                                var previous = reply[val][date_array[d-1].date];
-/*                                console.log('val => '+val);
-                                console.log('previous => '+previous);*/
-                                count++;
-                            }
-                           
-                            var percent = percentChange(previous, numberOfLikes);
-                            table += '<td data-title="' + date_array[d].value + '" data-sort-value=' + percent.change.toFixed(3) + '>' + numberOfLikes + '<span class="' + percent.class + '">' + Math.abs(percent.change.toFixed(3)) + '% </td>';  
-                        }
-                    }
-                    else
-                        table += '<td data-title="' + date_array[d].value + '"data-sort-value="'+numberOfLikes+'" >' + numberOfLikes + '</td>';
-                 }
-               
-             }
-             table += '</tr>';
-
-
-         }
-         table += '</tbody>';
-         //console.log('table => '+table);
-         $('.fblikes-table').html(table);
-         $('#no-more-tables , .pagination-container').show();
-         $("table").stupidtable();
-     }).fail(function(reply) {
+     }).done(function(reply){jsonReply=reply;createTable();}).fail(function(reply) {
          console.log("fail");
      });
  }
@@ -169,3 +90,103 @@
          console.log("fail");
      });
  }
+   // var reply= jsonReply;
+/*console.log('jsonReply => ',jsonReply);
+debugger;*/
+ var createTable=function() {
+    var reply= jsonReply;
+    var checked = $('#figure').is(':checked');
+    if(checked == false)
+        var symbol = '';
+    else
+        var symbol = '%';
+         //console.log(reply);
+
+         //window.location=reply;
+         var table = '';
+         //console.log(reply);
+
+         var date_array = [];
+         date_array.push({
+             "date": '2015-03-11',
+             "value": "11 Mar '15"
+         });
+         date_array.push({
+             "date": '2015-03-14',
+             "value": "14 Mar '15"
+         });
+         date_array.push({
+             "date": '2015-03-16',
+             "value": "16 Mar '15"
+         });
+         date_array.push({
+             "date": '2015-03-17',
+             "value": "17 Mar '15"
+         });
+         date_array.push({
+             "date": '2015-03-18',
+             "value": "18 Mar '15"
+         });
+         date_array.push({
+             "date": '2015-03-19',
+             "value": "19 Mar '15"
+         });
+         table += '<thead class="cf"><tr><th class="menu-right sorting-asc" data-sort="string-ins">PAGES</th>';
+         for (index in date_array) {
+             table += '<th class="numeric" data-sort="float">' + date_array[index].value + '</th>';
+         }
+         table += '</tr></thead><tbody>';
+
+                  for (val in reply) {
+
+                      table += '<tr>';
+                      table += '<td data-title="Page Name">' + val + '</td>';
+                      var count = 0;
+                      for (d in date_array) {
+                          var numberOfLikes = reply[val][date_array[d].date];
+
+                          if (numberOfLikes == undefined)
+                          {
+                              numberOfLikes = "-N/A-";
+                              table += '<td data-sort-value="0.0" data-title="' + date_array[d].value + '">' + numberOfLikes + '</td>';
+                          }
+                          else
+                          { 
+                             if(d!=0)
+                             {
+                                 if(reply[val][date_array[d-1].date] == undefined)
+                                 {
+                                     table += '<td data-sort-value="0.0" data-title="' + date_array[d].value + '">' + numberOfLikes + '</td>';
+                                 }
+                                 else
+                                 {
+                                     if(count == 0)
+                                     {
+
+                                         var previous = reply[val][date_array[d-1].date];
+         /*                                console.log('val => '+val);
+                                         console.log('previous => '+previous);*/
+                                         count++;
+                                     }
+                                    
+                                     var percent = percentChange(previous, numberOfLikes, 'figure');
+                                     table += '<td data-title="' + date_array[d].value + '" data-sort-value=' + percent.change.toFixed(3) + '>' + numberOfLikes + '<span class="' + percent.class + '">' + Math.abs(percent.change.toFixed(3))+' '+ symbol+' </td>';  
+                                 }
+                             }
+                             else
+                                 table += '<td data-title="' + date_array[d].value + '"data-sort-value="'+numberOfLikes+'" >' + numberOfLikes + '</td>';
+                          }
+                        
+                      }
+                      table += '</tr>';
+
+
+                  }
+
+         table += '</tbody>';
+         //console.log('table => '+table);
+         $('.fblikes-table').html(table);
+                 $('#loader').html("").hide();
+         $('#no-more-tables , .pagination-container').show();
+         $("table").stupidtable();
+}

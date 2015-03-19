@@ -86,6 +86,9 @@
     <div id="loader" style="width:100%; margin:0 auto;">
        <!-- <img src="indicator.gif"/> -->
     </div>
+    <div class="row">
+        <input type="checkbox" name="changefigure" onclick="createTable();" id="figure" checked > Show Percent
+    </div>
     <div class="row"> 
         <div id="no-more-tables">
             <table class="col-md-12 col-bg-12 col-sm-12 table-condensed cf fblikes-table">
