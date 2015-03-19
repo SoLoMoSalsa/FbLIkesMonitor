@@ -79,16 +79,17 @@
             <form id="category_form">
               <select class="form-control category-filter" name="category" onchange="submit()">Celebrity
              </select>
+            <label for="figure" style="margin: 10px 0;color: #ccc;">
+                <input type="checkbox" name="changefigure" onclick="createTable();" id="figure" style="font-size:30px; margin-right: 5px;" > Show exact fall</label>
             </form>
+
         </div>
     </div>
 </div>
     <div id="loader" style="width:100%; margin:0 auto;">
        <!-- <img src="indicator.gif"/> -->
     </div>
-    <div class="row">
-        <input type="checkbox" name="changefigure" onclick="createTable();" id="figure" checked > Show Percent
-    </div>
+    
     <div class="row"> 
         <div id="no-more-tables">
             <table class="col-md-12 col-bg-12 col-sm-12 table-condensed cf fblikes-table">

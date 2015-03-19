@@ -36,7 +36,7 @@
     y=parseInt(y);
     var checked = $('#figure').is(':checked');
     console.log('checked => '+checked); 
-    if(checked == false)
+    if(checked == true)
         var change = (y - x);
     else
         var change = (((y - x) / x) * 100);
@@ -96,7 +96,7 @@ debugger;*/
  var createTable=function() {
     var reply= jsonReply;
     var checked = $('#figure').is(':checked');
-    if(checked == false)
+    if(checked == true)
         var symbol = '';
     else
         var symbol = '%';
