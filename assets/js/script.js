@@ -112,24 +112,24 @@ debugger;*/
              "value": "11 Mar '15"
          });
          date_array.push({
-             "date": '2015-03-14',
-             "value": "14 Mar '15"
-         });
-         date_array.push({
              "date": '2015-03-16',
              "value": "16 Mar '15"
-         });
-         date_array.push({
-             "date": '2015-03-17',
-             "value": "17 Mar '15"
          });
          date_array.push({
              "date": '2015-03-18',
              "value": "18 Mar '15"
          });
          date_array.push({
-             "date": '2015-03-19',
-             "value": "19 Mar '15"
+             "date": '2015-03-21',
+             "value": "21 Mar '15"
+         });
+         date_array.push({
+             "date": '2015-03-28',
+             "value": "28 Mar '15"
+         });
+         date_array.push({
+             "date": '2015-04-03',
+             "value": "3 Apr '15"
          });
          table += '<thead class="cf"><tr><th class="menu-right sorting-asc" data-sort="string-ins">PAGES</th>';
          for (index in date_array) {

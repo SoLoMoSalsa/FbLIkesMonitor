@@ -126,7 +126,6 @@ tr td:first-child:before {
     
     content: "";
 }
-
 .pagination-container {
     text-align: center;
 }
@@ -289,6 +288,9 @@ button:focus .icon-bar.lev3 {
     
     .fblikes-table tr {
         height: 50px;
+    }
+    tr td:first-child {
+        width: 20%;
     }
 }
 
